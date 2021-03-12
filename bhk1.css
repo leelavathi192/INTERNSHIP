@@ -1,0 +1,73 @@
+*{
+padding:0px;
+margin:0px;
+color: white;
+}
+body
+{
+  background-image:url(light.jpg);
+  background-size:cover;
+  background-position:center;
+  text-align:left;
+  font-size:20px;
+  background-color:#74c69d 
+}
+td {
+border: 1px #DDD solid; 
+padding: 5px; 
+cursor: pointer;
+border:none;
+}
+h1{
+color: white;
+margin-top:65px;
+margin-bottom:15px;
+text-transform:uppercase;
+font-weight:bold;
+word-spacing: 10px;
+
+}
+input{
+padding:10px;
+font-weight:bold;
+font-size:20px;
+background:#0009;
+color:white;
+}
+label{
+
+font-weight:bold;
+font-size:20px;
+}
+h2{
+text-transform:uppercase;
+font-weight:bold;
+word-spacing: 5px;
+}
+
+thead{
+font-size:25px;
+text-align: center;
+}
+tbody{
+font-size:20px;
+font-weight:bold;
+}
+.padding{
+padding-left:35px;
+padding-right:35px;
+}
+.price:hover{
+background:#00b4d8;
+color:black;
+}
+
+.space{
+padding-bottom:10px;
+}
+
+tbody,td{
+	border: 5pt solid white;
+	 border-spacing: 5px;
+}
+

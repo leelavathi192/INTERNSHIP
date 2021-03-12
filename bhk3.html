@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3BHK</title>
+    <link rel="stylesheet" href="bhk1.css"> 
+</head>
+<body>
+    <h1>Calculate the price for your house!!!</h1>
+    <label>Enter number of switches in room1 : <input type="number" maxlength="2" oninput="javascript: if (this.value.length>this.maxLength) this.value=this.value.slice(0,this.maxLength);" id="switch1" required /></label><br>
+    <label>Enter number of switches in room2 : <input type="number" maxlength="2" oninput="javascript: if (this.value.length>this.maxLength) this.value=this.value.slice(0,this.maxLength);" id="switch2" required /></label><br>
+    <label>Enter number of switches in room3 : <input type="number" maxlength="2" oninput="javascript: if (this.value.length>this.maxLength) this.value=this.value.slice(0,this.maxLength);" id="switch3" required /></label><br><br>
+    <table id="myTable" cellspacing="1">       
+    <h2>Select the package</h2><br>      
+    <thead>
+        <tr> 
+            <th class="space">PRICE</th>
+            <th class="space">WARRANTY</th></tr>
+        </tr> 
+    </thead> 
+    <tbody> 
+        <tr class="price"> 
+            <td class="padding">60000</td>
+            <td >1 year</td>
+        </tr> 
+        <tr class="price"> 
+            <td class="padding">100000</td>
+            <td>3 year</td> 
+        </tr> 
+        <tr class="price"> 
+            <td class="padding">150000</td>
+            <td>5 year</td> 
+        </tr> 
+    </tbody> 
+</table><br>
+
+<div id="price"></div>
+    <div id="warranty"></div>
+    <div id="tprice"></div>
+      
+    <script>             
+            var table = document.getElementById( 'myTable' ),inputHash = {'0': 'price',
+        '1': 'warranty',};
+
+    for ( var i in inputHash )
+        inputHash[ i ] = document.getElementById( inputHash[ i ] );
+
+    table.addEventListener( 'click', function( evt ){
+    var target = evt.target;
+    
+    if ( target.nodeName != 'TD' )
+        return;
+    
+    var columns = target.parentNode.getElementsByTagName( 'td' );
+    
+    for ( var i = columns.length; i-- ; )
+    {
+        inputHash[ i ].value = columns[ i ].innerHTML;
+        if(i==0)
+        {
+            var k=inputHash[ 0 ].value;
+            var l=document.getElementById("switch1").value;
+            var m=document.getElementById("switch2").value;
+            var n=document.getElementById("switch3").value;
+            var result=parseInt(k)*(parseInt(l)+parseInt(m)+parseInt(n));
+            document.getElementById("tprice").innerHTML = "</br><h3>Total cost for your house is " + result +"</h3>"; 
+        }
+    } 
+    } );
+    </script>   
+</body>
+</html>
